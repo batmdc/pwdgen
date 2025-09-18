@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset="utf-8" >
+<link rel="stylesheet" href="css/styles.css?__inline=true" />
+<link rel="stylesheet" href="css/fonts.css?__inline=true" />
+<link rel="icon" type="image/png" href="img/lock-icon.png">
+<title>MDC Password Generator</title>
+<!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+<script src="js/webcomponents-loader.min.js"></script>
+<!-- Load the element definition -->
+<script type="module" src="js/zero-md.min.js"></script>
+
+</head>
+<body class="more-info">
+<div class="container">
+  <div class="header">
+    <img src="img/lock.png?__inline=true" width="500" height="103" alt="MDC Password Generator" />
+    <h1 class="title">More Info</h1>
+  </div>
+    <p>Approximate time to crack based on the algorithym <a href="https://github.com/dropbox/zxcvbn" target="_blank">zxcvbn.js</a></p>
+    <p>The algorithm assumes 10,000 guesses per second, which is consistent with passwords hashed using bcrypt, scrypt or PBKDF2. If a database contains passwords hashed with MD5 or SHA-256/512, then no amount of password security is really going to help.</p>
+    <p>Users of this password generator are responsible for the secure handling of passwords they take and use.</p>
+  
+</div>
+<div class="footer">
+
+</div>
+
+<script src="js/zxcvbn.js?__inline=true"></script>
+<script src="js/wordlist.js?__inline=true"></script>
+<script src="js/script.js?__inline=true"></script>
+</body>
+</html>

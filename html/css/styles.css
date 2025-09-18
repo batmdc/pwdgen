@@ -1,0 +1,282 @@
+* {
+  font-family: 'MH';
+  line-height: 175%;
+}
+body {
+  margin: 0;
+  padding: 0;
+    background: #000;
+    color: #FFF;
+    padding-top: 20px;
+    background-color: #0c4159;
+    background-repeat:no-repeat;
+    background-size: 100% auto;
+}
+h1 {
+  text-transform: uppercase;
+  text-align: center;
+  font: 100 48px 'MH';
+  margin: 0 auto 20px auto;
+}
+h1 span {
+  font-weight: 400;
+}
+/* Only style the main password text input, not all inputs */
+input[type="text"], input#passphrase {
+  display: block;
+  margin: 0 auto;
+  font-size: 40px;
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  padding: 1%;
+  background-color: #eff8e2;
+}
+/* Use Tahoma specifically for the generated password field */
+input#passphrase {
+  font-family: Tahoma, Arial, sans-serif;
+}
+select {
+  font-size: 16px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+select {
+  font-size: 14px;
+  border: 1px solid #ccc;
+  height: 34px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #eff8e2;
+  background-size: 10px 5px;
+  padding: 0 25px;
+}
+select::after {
+  content:'\25BC';
+  display:inline-block;
+  color:#000;
+  background-color:#fff;
+  margin-left:25px;   /* remove the damn :after space */
+  pointer-events:none; /* let the click pass trough */
+}
+/* Checkbox styling to better align with selects */
+.passphrase-options fieldset label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 6px 10px;
+  font-size: 14px;
+}
+
+/* Stack the checkboxes below the Word count select in the Words fieldset */
+#words-fieldset {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+#words-fieldset > label:first-of-type { /* word count */
+  justify-content: center;
+}
+#words-fieldset > label:nth-of-type(2),
+#words-fieldset > label:nth-of-type(3) {
+  justify-content: center;
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin: 0;
+  accent-color: #658c29; /* modern browsers */
+  background-color: #eff8e2; /* fallback bg similar to selects */
+  border: 1px solid #ccc;
+  vertical-align: middle;
+}
+/*target Internet Explorer 9 and Internet Explorer 10:*/
+@media screen and (min-width:0\0) {
+  select {
+    background:none;
+    padding: 5px;
+  }
+}
+button {
+  font-size: 14px;
+  border: 1px solid #658c29;
+  padding: 3px 20px;
+  background-color: #658c29;
+  height: 34px;
+  transition: all 0.2s ease;
+    color: #FFF;
+}
+
+a{
+ color: #658c29;   
+}
+button:hover {
+  background-color: #658c29;
+  color: white;
+}
+button:active {
+  background-color: #658c29;
+}
+p {
+  margin: 20px 0;
+    text-align:center;
+}
+
+.about-body p{
+    text-align: left;
+}
+table {
+  width: 95%;
+  max-width: 1024px;
+  margin: 40px auto 40px auto;
+  font-size: 90%;
+    
+}
+table, th, td {
+  border: 1px solid #ccc;
+  border-collapse: collapse;
+    
+  padding: 10px;
+}
+tr:nth-child(even) {
+    background-color: #f6f6f6;
+}
+li {
+  padding-bottom: 6px;
+  padding-top: 6px;
+}
+.container {
+  width: 95%;
+  max-width: 768px;
+  margin: 0 auto;
+}
+.more-info .container {
+  max-width: 1200px; /* broaden more-info page width */
+}
+.header {
+  text-align: center;
+  margin-top: 10px;
+}
+.passphrase-label {
+  margin: 0 auto 3px auto;
+  font-size: 36px;
+  color: #FFF;
+  text-align: center;
+}
+.passphrase-options {
+  margin-top: 1%;
+  text-align: center;
+}
+.crack-time-label {
+  text-align: center;
+  margin: 0 auto;
+  /*font-weight: 700;
+  font-size: 72%;*/
+}
+.crack-time-label .crack-time {
+  font-size: 18px;
+  font-weight: 400;
+}
+.breach-status {
+  text-align: center;
+  margin: 5px auto 0 auto;
+  font-size: 16px;
+}
+.breach-status.ok { color: #658c29; }
+.breach-status.pwned { color: #ff4d4d; }
+.breach-status.neutral { color: #cccccc; }
+.brief-disclaimer {
+  font-size: 10px;
+}
+.social-buttons {
+  text-align: center;
+  vertical-align: middle;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 50px 0;
+}
+.social-buttons svg {
+  vertical-align: middle;
+}
+.social-buttons a {
+  padding: 0 20px 0 20px;
+  text-decoration: none;
+  font-size: 85%;
+}
+.social-buttons .sc--facebook {
+  color: #3b5998;
+  fill: #3b5998;
+}
+.social-buttons .sc--twitter {
+  color: #55acee;
+  fill: #55acee;
+}
+.social-buttons .sc--github {
+  color: black;
+  fill: black;
+}
+code, .password {
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 700;
+}
+.footer {
+  font-size: 70%;
+  margin-top: 60px;
+  width: 95%;
+  max-width: 1200px; /* slightly larger as requested */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 23px 0 40px 0; /* remove large side padding */
+}
+.footer p {
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center; /* remove left alignment per request */
+  line-height: 1.6;
+}
+
+@media only screen and (max-device-width: 768px) {
+  /* For mobile phones: */
+  
+    body {
+  font-size: 22px;
+            background-image: none;
+}
+    
+    .footer{
+      font-size: 22px;
+    }
+    
+    select {
+  font-size: 28px;
+          height: 48px;
+}
+    input[type="checkbox"] {
+  width: 24px;
+  height: 24px;
+}
+    button {
+  font-size: 28px;
+  height: 48px;
+        margin-top: 20px 
+}
+    
+    .passphrase-label {
+  font-size: 26px;
+
+}
+
+/*
+.crack-time-label {
+  font-size: 26px;
+}
+img{
+  width: 100%;
+  height:auto;
+}
+*/
+}

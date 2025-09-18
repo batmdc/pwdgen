@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset="utf-8" >
+<link rel="stylesheet" href="css/styles.css?__inline=true" />
+<link rel="stylesheet" href="css/fonts.css?__inline=true" />
+<link rel="icon" type="image/png" href="img/lock-icon.png">
+<title>MDC Password Generator</title>
+<!-- Lightweight client-side loader that feature-detects and load polyfills only when necessary -->
+<script src="js/webcomponents-loader.min.js"></script>
+<!-- Load the element definition -->
+<script type="module" src="js/zero-md.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+  <div class="header">
+    <img src="img/lock.png?__inline=true" width="500" height="103" alt="MDC Passwords Generator" />
+  </div>
+  <p class="passphrase-label">Generate a password</p>
+  <input id="passphrase" type="text" value="Loading..." onmouseover="this.select()"/>
+  <p class="crack-time-label">Approximate time to crack it: <span class="crack-time">0 seconds</span></p>
+  <p class="breach-status" aria-live="polite"><span class="breach-status-text">Checking...</span></p>
+  <div class="passphrase-options">
+    <!-- Old select kept for reference (comment toggle)
+    <select id="passphrase_select">
+      <option value="1" selected>2 short words and a number with capitals and symbol</option>
+      <option value="2">2 words and a number with capitals and symbol</option>
+      <option value="3">2 words and a number with capitals and 2 symbols</option>
+      <option value="4">3 words and 2 numbers with no capitals or symbols</option>
+      <option value="5">Short babble type password</option>
+      <option value="6">Long babble type password</option>
+      <option value="7">4 word passphrase with spaces</option>
+      <option value="8">5 word passphrase with spaces</option>
+      <option value="9">12 word passphrase with spaces</option>
+    </select>
+    -->
+
+    <fieldset id="words-fieldset">
+      <legend>Words</legend>
+      <label>
+        Word count
+        <select id="opt_wordCount">
+          <option value="1">1</option>
+          <option value="2" selected>2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+          <option value="5">5</option>
+          <option value="6">6</option>
+        </select>
+      </label>
+      <label>
+        <input type="checkbox" id="opt_shortWordsOnly"> Short words only (4–5 letters)
+      </label>
+      <label>
+        <input type="checkbox" id="opt_passphraseMode"> Passphrase (words only, spaced)
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Numbers</legend>
+      <label>
+        Number count
+        <select id="opt_numberTokenCount">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Symbols</legend>
+      <label>
+        Symbol count
+        <select id="opt_symbolCount">
+          <option value="0">0</option>
+          <option value="1" selected>1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+          <option value="4">4</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Theme</legend>
+      <label>
+        Theme
+        <select id="opt_theme">
+          <option value="default" selected>Default</option>
+          <option value="babble">Babble</option>
+          <option value="dino">Dino</option>
+          <option value="latin">Latinish</option>
+          <option value="pseudo">Pseudo</option>
+          <option value="pseduogen">Pseduogen</option>
+          <option value="mi">te reo Māori</option>
+        </select>
+      </label>
+    </fieldset>
+
+    <fieldset>
+      <legend>Random</legend>
+      <label>
+        <input type="checkbox" id="opt_randomMode"> Random choices
+      </label>
+    </fieldset>
+
+    <button class="btn-generate">Generate New password</button>
+  <div>
+  <!-- <p>You may need to add 1 capital letter, a number and a symbol if not already present.<br/>This isn't always required but usually makes certain it is accepted anywhere you wish to use it.</p> -->
+<p><a href="https://mdcresolve.atlassian.net/servicedesk/customer/portal/1/article/230555651" target="_blank">on passwords</a><b> &#183; </b><a href="more-info.html" target="_blank">technical info</a></p>
+  </div>
+
+</div>
+<div class="footer">
+  <p class="brief-disclaimer">Password generation and strength estimation happen entirely in your browser. For breach checking, only the first 5 characters of the SHA-1 hash of the password (NOT the password itself) are sent to the Have I Been Pwned API using its k-anonymity model; the full password never leaves your device. If you prefer zero network calls you can work offline (breach status will show as unavailable). You can also save this page (Right click &gt; Save As) and run it locally. Always be cautious of any website offering to create or check passwords—this one is designed to minimize exposure.</p>
+</div>
+
+<script src="js/zxcvbn.js?__inline=true"></script>
+<script src="js/wordlist.js?__inline=true"></script>
+<script src="js/wordlist4to5.js?__inline=true"></script>
+<script src="js/dinolist.js?__inline=true"></script>
+<script src="js/otherlists.js?__inline=true"></script>
+<script src="js/wordlist-mi.js?__inline=true"></script>
+<script src="js/script.js?__inline=true"></script>
+<script src="js/breach-check.js?__inline=true"></script>
+</body>
+</html>
